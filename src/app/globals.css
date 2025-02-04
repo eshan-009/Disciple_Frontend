@@ -13,6 +13,11 @@
     --foreground: #ededed;
   }
 }
+@layer base {
+  ::selection {
+    background-color: #ea7aa74b; /* Custom background for selection */
+  }
+}
 
 body {
   color: var(--foreground);
