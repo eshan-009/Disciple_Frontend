@@ -1,7 +1,6 @@
 import FormButton from '@/lib/ui/FormButton'
 import InputField from '@/lib/ui/InputField'
 import OptionTabs from '@/lib/ui/OptionTabs'
-import { Checkbox, Flex, Text } from '@radix-ui/themes'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 

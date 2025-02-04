@@ -1,10 +1,17 @@
 import FormButton from '@/lib/ui/FormButton'
 import InputField from '@/lib/ui/InputField'
 import OptionTabs from '@/lib/ui/OptionTabs'
-import { Checkbox, Flex, Text } from '@radix-ui/themes'
-import React from 'react'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
 
 const SignupForm = () => {
+  const router = useRouter()
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
+  };
     const tabData = [{value:"Instructor",option:"Instructor"},{value:"Student",option:"Student"},{value:"Organization",option:"Organization"}]
 
   return (
@@ -20,15 +27,16 @@ const SignupForm = () => {
 
   <OptionTabs label={"Role"} tabOptions={tabData} />
 
-  <Text as="label" size="2">
-	<Flex gap="2">
-		<Checkbox defaultChecked />
-		Agree to Terms and Conditions
-	</Flex>
-</Text>
+<label className='flex items-center gap-4 '>
+  <input type='checkbox'
+   onChange={handleCheckboxChange} 
+  className=' appearance-none border h-4 w-4 rounded checked:bg-[#E93D82]' />
+      {isChecked && <Image alt='check' className='absolute ' src={`/tickMark.svg`} height={15} width={15} />}
+  Agree to Terms and Conditions
+</label>
 
 <FormButton text={"Sign Up"}/>
-<p>New user? <span onClick={()=>router.push("/signup")} className='text-blue-400 cursor-pointer'>Sign Up</span></p>
+<p>Already a user? <span onClick={()=>router.push("/login")} className='text-blue-400 cursor-pointer'>Sign in</span></p>
 
 </div>
     </form>

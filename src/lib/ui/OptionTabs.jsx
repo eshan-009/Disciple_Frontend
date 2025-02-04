@@ -1,4 +1,4 @@
-// import { SegmentedControl, Text } from '@radix-ui/themes'
+
 // import React from 'react'
 
 // const OptionTabs = ({label,tabOptions}) => {

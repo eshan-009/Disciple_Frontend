@@ -2,7 +2,6 @@
 import FormButton from "@/lib/ui/FormButton";
 import InputField from "@/lib/ui/InputField";
 import OptionTabs from "@/lib/ui/OptionTabs";
-import { Flex, Text, Button, TextField, Checkbox, SegmentedControl } from "@radix-ui/themes";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import React, { useState } from 'react'
