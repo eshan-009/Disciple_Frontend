@@ -2,6 +2,6 @@ import Image from "next/image";
 
 export default function Home() {
   return (
- <div></div>
+ <div className="h-[90vh] max-h-[90vh]">This is HomePage</div>
   );
 }

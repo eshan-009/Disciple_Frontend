@@ -15,11 +15,11 @@ const poppins = Poppins({
 });
 const SignupPage = () => {
   return (
-    <div  className='max-w-screen max-h-[100vh]  '> 
+    <div  className='max-w-screen h-full'> 
     {/* Parent Container */}
-        <div style={{ backgroundImage: 'url(/signup.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} className='flex h-full w-full '>
 
-   <IntroSectionAuth/>
+        <div style={{ backgroundImage: 'url(/signup.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} className='flex h-full w-full '>
+   <IntroSectionAuth quote={`Start Your Journey to a Stronger You`} title={`Welcome!`}/>
 
     
     {/* Signup form */}

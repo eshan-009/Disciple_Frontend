@@ -4,7 +4,10 @@ import React from 'react'
 
 const page = () => {
   return (
- <SignupPage/>
+    <div className='max-h-[90vh] h-[90vh] '>
+  <SignupPage/>
+</div>
+
   )
 }
 

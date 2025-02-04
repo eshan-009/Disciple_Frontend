@@ -1,12 +1,9 @@
-import { Button } from '@radix-ui/themes'
 import React from 'react'
 
-const FormButton = ({text}) => {
+const FormButton = ({text,clickHandler}) => {
   return (
 
-       <Button my="4" variant="surface">{text}</Button>
-
-
+    <button onClick={clickHandler} className='min-w-72 xl:min-w-96 mt-10 border border-[#E93D82] p-2 rounded-xl text-[#E93D82] bg-[#ea7aa74b] '>{text}</button>
   )
 }
 
