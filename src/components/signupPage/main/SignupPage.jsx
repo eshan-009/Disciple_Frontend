@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import SignupForm from "./SignupForm";
 import IntroSectionAuth from "@/components/Auth/IntroSectionAuth";
 import { useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
 const poppins = Poppins({
   weight: ['400', '600'],
   subsets: ['latin'],
@@ -16,8 +17,9 @@ const poppins = Poppins({
 const SignupPage = () => {
 
 
+
   return (
-    <div  className='max-w-screen h-full text-black'> 
+    <div  className=' h-full w-full  text-black'> 
     {/* Parent Container */}
 
         <div style={{ backgroundImage: 'url(/signup.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} className='flex h-full w-full '>

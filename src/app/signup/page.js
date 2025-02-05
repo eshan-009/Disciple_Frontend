@@ -4,7 +4,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='max-h-[90vh] h-[90vh] '>
+    <div className='w-screen max-h-[90vh] h-[90vh] '>
   <SignupPage/>
 </div>
 

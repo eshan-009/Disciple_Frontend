@@ -30,11 +30,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>
-    <GlobalDrawer/>
+  
     
         <NavBar/>
- 
-        {children}
+      <div className="flex">
+       <GlobalDrawer/>
+      {children}
+      </div>
     
         </ReduxProvider>
     
