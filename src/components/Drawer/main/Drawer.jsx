@@ -32,7 +32,7 @@ const Drawer = () => {
 
   return (
     <div>
-{isDrawerOpen && <div className=' bg-[#ea7aa71e]  fixed h-full w-full'></div>}
+{isDrawerOpen && <div className=' bg-[#ea7aa71e]  fixed h-full w-full z-50'></div>}
       {isDrawerOpen && (
         <div
           ref={drawerRef} // Assign the ref to the drawer container
