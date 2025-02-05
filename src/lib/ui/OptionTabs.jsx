@@ -19,7 +19,7 @@
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
-const OptionTabs = ({label,tabOptions}) => {
+const OptionTabs = ({setValue,register,errors,label,tabOptions}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected,setSelected]=useState('Select a Role')
 
@@ -50,12 +50,15 @@ const OptionTabs = ({label,tabOptions}) => {
 {label}
 <div className="relative inline-block " ref={dropdownRef}>
       <button
+       type="button"
         onClick={toggleDropdown}
-        className="px-4 py-2 border rounded-lg flex justify-between items-center gap-3 min-w-[50%]"
+        className={`px-4 py-2 border rounded-lg flex justify-between items-center gap-3 min-w-[50%] ${errors[`${label}`] && "border-red-500 outline-red-500"} `}
+  
+        {...register(`${label}`, { required: true })} 
       >
         {selected} <Image alt="up" src={isOpen ? `/arrow/arrowUp.svg` : `/arrow/arrowDown.svg`} height={15} width={15}/>
       </button>
-
+      {errors[`${label}`] && <p className='text-red-500 text-sm absolute'>*{label} is required.</p>}
       {isOpen && (
         <div className="absolute mt-2  min-w-[50%] bg-white border rounded-md shadow-lg z-50">
           <ul className="py-2">
@@ -63,6 +66,7 @@ const OptionTabs = ({label,tabOptions}) => {
               tabOptions?.map((item,index)=>(<li onClick={(e)=>{
                 toggleDropdown(e)
                 setSelected(item?.value)
+                setValue(`${label}` , item?.value )
               }} className=' px-4 py-2 hover:bg-[#ea7aa74b] cursor-pointer ' key={index} value={item?.value}>{item?.option}</li>))
             }
 
@@ -70,6 +74,7 @@ const OptionTabs = ({label,tabOptions}) => {
         </div>
       )}
     </div>
+
 </label>
   );
 };
